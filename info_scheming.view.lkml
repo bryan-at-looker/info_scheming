@@ -1,7 +1,9 @@
 view: info_scheming {
   derived_table: {
-    sql: SELECT * FROM INFORMATION_SCHEMA.COLUMNS
-            WHERE table_schema = '{% parameter table_schema_input %}' and  table_name = '{% parameter table_name_input %}'
+    sql:  SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+            WHERE   table_schema = '{% parameter table_schema_input %}'
+              AND   table_name = '{% parameter table_name_input %}'
+          ORDER BY column_name ASC
              ;;
   }
 
@@ -17,12 +19,12 @@ view: info_scheming {
 
   measure: lookml {
     type: string
-    sql: CONCAT('view: {% parameter table_name_input %} {
-      sql_table_name: {% parameter table_schema_input %}.{% parameter table_name_input %} ',';',';
+    sql: 'view: {% parameter table_name_input %} {' || '
+      ' || 'sql_table_name: {% parameter table_schema_input %}.{% parameter table_name_input %} ' || ';' ||';
 
-      ',array_join(array_agg(${combined}),'
-      '),'
-      }');;
+      ' || ARRAY_TO_STRING(array_agg(${combined}),'
+      ') || '
+      }';;
     html: {{value | newline_to_br }}  ;;
   }
 
@@ -65,13 +67,13 @@ view: info_scheming {
   dimension: name {
     hidden: yes
     type: string
-    sql: CONCAT('dimension: ',${column_helper},' {') ;;
+    sql: 'dimension: ' || ${column_helper} || ' {' ;;
   }
 
   dimension: sql {
     hidden: yes
     type: string
-    sql: CONCAT('sql: $','{','TABLE}.',${column_name},' ;',';') ;;
+    sql: 'sql: $' || '{' || 'TABLE}.' || ${column_name} || ' ;' || ';' ;;
   }
 
   dimension: type_convert {
@@ -96,12 +98,12 @@ view: info_scheming {
   dimension: combined {
     hidden: yes
     type: string
-    sql: CONCAT(${name},'
-          ',${sql},'
-          ',${type},'
-          ',${description},'
-          ','}','
-        ') ;;
+    sql: ${name} || '
+          ' || ${sql} || '
+          ' || ${type} || '
+          ' || ${description} || '
+          ' || '}' || '
+        ' ;;
     html: {{value | newline_to_br }} ;;
   }
 
@@ -132,7 +134,7 @@ view: info_scheming {
   dimension: description {
     hidden: yes
     type: string
-    sql: CONCAT('description: "',${comment},'"') ;;
+    sql: 'description: "' || ${comment} || '"' ;;
   }
 
   dimension: extra_info {
