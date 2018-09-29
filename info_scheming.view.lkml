@@ -80,9 +80,9 @@ view: info_scheming {
     hidden: yes
     type: string
     sql:
-    CASE WHEN ${data_type} IN ('integer','bigint','double') THEN 'number'
+    CASE WHEN LOWER(${data_type}) IN ('integer','bigint','double','float','float', 'number') THEN 'number'
          WHEN SUBSTR(${data_type},1,7) = 'decimal' THEN 'number'
-         WHEN ${data_type} = 'varchar' THEN 'string'
+         WHEN ${data_type} IN( 'varchar','TEXT') THEN 'string'
          WHEN ${data_type} = 'boolean' THEN 'yesno'
          ELSE CONCAT('string ## ',${data_type})
         END
