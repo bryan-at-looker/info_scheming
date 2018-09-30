@@ -16,9 +16,13 @@ view: info_in_rows {
     type: unquoted
   }
 
-  measure: count {
-    type: count
-    drill_fields: [detail*]
+  parameter: view_name_output {
+    type: unquoted
+  }
+
+  dimension: view_name_lookml {
+    type: string
+    sql: '{% parameter view_name_output %}' ;;
   }
 
   dimension: table_schema {
@@ -39,6 +43,18 @@ view: info_in_rows {
   dimension: data_type {
     type: string
     sql: ${TABLE}."DATA_TYPE" ;;
+  }
+
+  dimension: type_convert {
+    type: string
+    sql:
+    CASE WHEN LOWER(${data_type}) IN ('integer','bigint','double','float','float', 'number') THEN 'number'
+         WHEN SUBSTR(${data_type},1,7) = 'decimal' THEN 'number'
+         WHEN ${data_type} IN( 'varchar','TEXT') THEN 'string'
+         WHEN ${data_type} = 'boolean' THEN 'yesno'
+         ELSE CONCAT('string ## ',${data_type})
+        END
+  ;;
   }
 
   dimension: comment {
