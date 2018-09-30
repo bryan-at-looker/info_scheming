@@ -9,3 +9,10 @@ explore: info_scheming {
     filters: { field: table_schema_input value: ""}
   }
 }
+
+explore: info_in_rows {
+  always_filter: {
+    filters: { field: table_name_input value: ""}
+    filters: { field: table_schema_input value: ""}
+  }
+}
