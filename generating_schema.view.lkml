@@ -1,20 +1,26 @@
-view: EVENTS {
-      sql_table_name: PUBLIC.EVENTS ;;
+view: USERS {
+      sql_table_name: PUBLIC.USERS ;;
 
+      dimension: latitude {
+          sql: ${TABLE}.LATITUDE ;;
+          type: number
+          description: ""
+          }
+        
       dimension: longitude {
           sql: ${TABLE}.LONGITUDE ;;
           type: number
           description: ""
           }
         
-      dimension: os {
-          sql: ${TABLE}.OS ;;
+      dimension: zip {
+          sql: ${TABLE}.ZIP ;;
           type: string
           description: ""
           }
         
-      dimension: user_id {
-          sql: ${TABLE}.USER_ID ;;
+      dimension: age {
+          sql: ${TABLE}.AGE ;;
           type: number
           description: ""
           }
@@ -25,14 +31,8 @@ view: EVENTS {
           description: ""
           }
         
-      dimension: sequence_number {
-          sql: ${TABLE}.SEQUENCE_NUMBER ;;
-          type: number
-          description: ""
-          }
-        
-      dimension: city {
-          sql: ${TABLE}.CITY ;;
+      dimension: last_name {
+          sql: ${TABLE}.LAST_NAME ;;
           type: string
           description: ""
           }
@@ -43,38 +43,20 @@ view: EVENTS {
           description: ""
           }
         
-      dimension: session_id {
-          sql: ${TABLE}.SESSION_ID ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: latitude {
-          sql: ${TABLE}.LATITUDE ;;
-          type: number
-          description: ""
-          }
-        
-      dimension: ip_address {
-          sql: ${TABLE}.IP_ADDRESS ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: zip {
-          sql: ${TABLE}.ZIP ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: browser {
-          sql: ${TABLE}.BROWSER ;;
-          type: string
-          description: ""
-          }
-        
       dimension: traffic_source {
           sql: ${TABLE}.TRAFFIC_SOURCE ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: email {
+          sql: ${TABLE}.EMAIL ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: first_name {
+          sql: ${TABLE}.FIRST_NAME ;;
           type: string
           description: ""
           }
@@ -91,14 +73,14 @@ view: EVENTS {
           description: ""
           }
         
-      dimension: event_type {
-          sql: ${TABLE}.EVENT_TYPE ;;
+      dimension: gender {
+          sql: ${TABLE}.GENDER ;;
           type: string
           description: ""
           }
         
-      dimension: uri {
-          sql: ${TABLE}.URI ;;
+      dimension: city {
+          sql: ${TABLE}.CITY ;;
           type: string
           description: ""
           }
