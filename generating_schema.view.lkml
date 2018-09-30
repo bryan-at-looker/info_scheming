@@ -1,51 +1,21 @@
-view: ORDER_ITEMS {
-      sql_table_name: PUBLIC.ORDER_ITEMS ;;
+view: EVENTS {
+      sql_table_name: PUBLIC.EVENTS ;;
 
-      dimension: user_id {
-          sql: ${TABLE}.USER_ID ;;
+      dimension: id {
+          sql: ${TABLE}.ID ;;
           type: number
           description: ""
           }
         
-      dimension: inventory_item_id {
-          sql: ${TABLE}.INVENTORY_ITEM_ID ;;
+      dimension: longitude {
+          sql: ${TABLE}.LONGITUDE ;;
           type: number
           description: ""
           }
         
-      dimension: sale_price {
-          sql: ${TABLE}.SALE_PRICE ;;
+      dimension: sequence_number {
+          sql: ${TABLE}.SEQUENCE_NUMBER ;;
           type: number
-          description: ""
-          }
-        
-      dimension: shipped_at {
-          sql: ${TABLE}.SHIPPED_AT ;;
-          type: string ## TIMESTAMP_LTZ
-          description: ""
-          }
-        
-      dimension: order_id {
-          sql: ${TABLE}.ORDER_ID ;;
-          type: number
-          description: ""
-          }
-        
-      dimension: returned_at {
-          sql: ${TABLE}.RETURNED_AT ;;
-          type: string ## TIMESTAMP_LTZ
-          description: ""
-          }
-        
-      dimension: status {
-          sql: ${TABLE}.STATUS ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: delivered_at {
-          sql: ${TABLE}.DELIVERED_AT ;;
-          type: string ## TIMESTAMP_LTZ
           description: ""
           }
         
@@ -55,9 +25,81 @@ view: ORDER_ITEMS {
           description: ""
           }
         
-      dimension: id {
-          sql: ${TABLE}.ID ;;
+      dimension: event_type {
+          sql: ${TABLE}.EVENT_TYPE ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: user_id {
+          sql: ${TABLE}.USER_ID ;;
           type: number
+          description: ""
+          }
+        
+      dimension: city {
+          sql: ${TABLE}.CITY ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: country {
+          sql: ${TABLE}.COUNTRY ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: session_id {
+          sql: ${TABLE}.SESSION_ID ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: browser {
+          sql: ${TABLE}.BROWSER ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: zip {
+          sql: ${TABLE}.ZIP ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: ip_address {
+          sql: ${TABLE}.IP_ADDRESS ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: state {
+          sql: ${TABLE}.STATE ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: traffic_source {
+          sql: ${TABLE}.TRAFFIC_SOURCE ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: uri {
+          sql: ${TABLE}.URI ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: latitude {
+          sql: ${TABLE}.LATITUDE ;;
+          type: number
+          description: ""
+          }
+        
+      dimension: os {
+          sql: ${TABLE}.OS ;;
+          type: string
           description: ""
           }
         
