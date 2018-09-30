@@ -1,69 +1,51 @@
-view: USERS {
-      sql_table_name: PUBLIC.USERS ;;
+view: ORDER_ITEMS {
+      sql_table_name: PUBLIC.ORDER_ITEMS ;;
 
-      dimension: latitude {
-          sql: ${TABLE}.LATITUDE ;;
+      dimension: user_id {
+          sql: ${TABLE}.USER_ID ;;
           type: number
           description: ""
           }
         
-      dimension: longitude {
-          sql: ${TABLE}.LONGITUDE ;;
+      dimension: inventory_item_id {
+          sql: ${TABLE}.INVENTORY_ITEM_ID ;;
           type: number
           description: ""
           }
         
-      dimension: zip {
-          sql: ${TABLE}.ZIP ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: age {
-          sql: ${TABLE}.AGE ;;
+      dimension: sale_price {
+          sql: ${TABLE}.SALE_PRICE ;;
           type: number
           description: ""
           }
         
-      dimension: id {
-          sql: ${TABLE}.ID ;;
+      dimension: shipped_at {
+          sql: ${TABLE}.SHIPPED_AT ;;
+          type: string ## TIMESTAMP_LTZ
+          description: ""
+          }
+        
+      dimension: order_id {
+          sql: ${TABLE}.ORDER_ID ;;
           type: number
           description: ""
           }
         
-      dimension: last_name {
-          sql: ${TABLE}.LAST_NAME ;;
+      dimension: returned_at {
+          sql: ${TABLE}.RETURNED_AT ;;
+          type: string ## TIMESTAMP_LTZ
+          description: ""
+          }
+        
+      dimension: status {
+          sql: ${TABLE}.STATUS ;;
           type: string
           description: ""
           }
         
-      dimension: country {
-          sql: ${TABLE}.COUNTRY ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: traffic_source {
-          sql: ${TABLE}.TRAFFIC_SOURCE ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: email {
-          sql: ${TABLE}.EMAIL ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: first_name {
-          sql: ${TABLE}.FIRST_NAME ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: state {
-          sql: ${TABLE}.STATE ;;
-          type: string
+      dimension: delivered_at {
+          sql: ${TABLE}.DELIVERED_AT ;;
+          type: string ## TIMESTAMP_LTZ
           description: ""
           }
         
@@ -73,15 +55,9 @@ view: USERS {
           description: ""
           }
         
-      dimension: gender {
-          sql: ${TABLE}.GENDER ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: city {
-          sql: ${TABLE}.CITY ;;
-          type: string
+      dimension: id {
+          sql: ${TABLE}.ID ;;
+          type: number
           description: ""
           }
         
