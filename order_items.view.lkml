@@ -2,13 +2,13 @@ view: order_items {
 sql_table_name: PUBLIC.ORDER_ITEMS ;;
 
 dimension: created_at {
-    type: string ## TIMESTAMP_LTZ
+    type: time
     sql: ${TABLE}.CREATED_AT ;;
 }
 
     
 dimension: delivered_at {
-    type: string ## TIMESTAMP_LTZ
+    type: time
     sql: ${TABLE}.DELIVERED_AT ;;
 }
 
@@ -32,7 +32,7 @@ dimension: order_id {
 
     
 dimension: returned_at {
-    type: string ## TIMESTAMP_LTZ
+    type: time
     sql: ${TABLE}.RETURNED_AT ;;
 }
 
@@ -44,7 +44,7 @@ dimension: sale_price {
 
     
 dimension: shipped_at {
-    type: string ## TIMESTAMP_LTZ
+    type: time
     sql: ${TABLE}.SHIPPED_AT ;;
 }
 
