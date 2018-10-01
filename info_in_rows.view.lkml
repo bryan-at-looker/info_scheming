@@ -50,8 +50,9 @@ view: info_in_rows {
     sql:
     CASE WHEN LOWER(${data_type}) IN ('integer','bigint','double','float','float', 'number') THEN 'number'
          WHEN SUBSTR(${data_type},1,7) = 'decimal' THEN 'number'
-         WHEN ${data_type} IN( 'varchar','TEXT') THEN 'string'
-         WHEN ${data_type} = 'boolean' THEN 'yesno'
+         WHEN LOWER(${data_type}) IN( 'varchar','text') THEN 'string'
+         WHEN LOWER(${data_type}) = 'boolean' THEN 'yesno'
+         WHEN LOWER(${data_type}) IN ('timestamp_ltz','timestamp_ntz','timestamp_tz','timestamp','time', 'datetime', 'date') THEN 'time'
          ELSE CONCAT('string ## ',${data_type})
         END
   ;;
