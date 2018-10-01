@@ -1,32 +1,14 @@
 view: EVENTS {
       sql_table_name: PUBLIC.EVENTS ;;
 
-      dimension: longitude {
-          sql: ${TABLE}.LONGITUDE ;;
+      dimension: id {
+          sql: ${TABLE}.ID ;;
           type: number
-          description: ""
-          }
-        
-      dimension: os {
-          sql: ${TABLE}.OS ;;
-          type: string
           description: ""
           }
         
       dimension: latitude {
           sql: ${TABLE}.LATITUDE ;;
-          type: number
-          description: ""
-          }
-        
-      dimension: user_id {
-          sql: ${TABLE}.USER_ID ;;
-          type: number
-          description: ""
-          }
-        
-      dimension: id {
-          sql: ${TABLE}.ID ;;
           type: number
           description: ""
           }
@@ -37,44 +19,26 @@ view: EVENTS {
           description: ""
           }
         
-      dimension: session_id {
-          sql: ${TABLE}.SESSION_ID ;;
+      dimension: ip_address {
+          sql: ${TABLE}.IP_ADDRESS ;;
           type: string
           description: ""
           }
         
-      dimension: city {
-          sql: ${TABLE}.CITY ;;
+      dimension: os {
+          sql: ${TABLE}.OS ;;
           type: string
           description: ""
           }
         
-      dimension: country {
-          sql: ${TABLE}.COUNTRY ;;
-          type: string
+      dimension: user_id {
+          sql: ${TABLE}.USER_ID ;;
+          type: number
           description: ""
           }
         
       dimension: browser {
           sql: ${TABLE}.BROWSER ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: created_at {
-          sql: ${TABLE}.CREATED_AT ;;
-          type: string ## TIMESTAMP_LTZ
-          description: ""
-          }
-        
-      dimension: event_type {
-          sql: ${TABLE}.EVENT_TYPE ;;
-          type: string
-          description: ""
-          }
-        
-      dimension: zip {
-          sql: ${TABLE}.ZIP ;;
           type: string
           description: ""
           }
@@ -91,8 +55,44 @@ view: EVENTS {
           description: ""
           }
         
-      dimension: ip_address {
-          sql: ${TABLE}.IP_ADDRESS ;;
+      dimension: created_at {
+          sql: ${TABLE}.CREATED_AT ;;
+          type: string ## TIMESTAMP_LTZ
+          description: ""
+          }
+        
+      dimension: event_type {
+          sql: ${TABLE}.EVENT_TYPE ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: city {
+          sql: ${TABLE}.CITY ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: country {
+          sql: ${TABLE}.COUNTRY ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: session_id {
+          sql: ${TABLE}.SESSION_ID ;;
+          type: string
+          description: ""
+          }
+        
+      dimension: longitude {
+          sql: ${TABLE}.LONGITUDE ;;
+          type: number
+          description: ""
+          }
+        
+      dimension: zip {
+          sql: ${TABLE}.ZIP ;;
           type: string
           description: ""
           }
