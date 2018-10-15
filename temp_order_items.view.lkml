@@ -49,6 +49,12 @@ dimension: inventory_item_id {
 }
 
     
+dimension: new_sale_price {
+    type: number
+    sql: ${TABLE}.NEW_SALE_PRICE ;;
+}
+
+    
 dimension: order_id {
     type: number
     sql: ${TABLE}.ORDER_ID ;;
