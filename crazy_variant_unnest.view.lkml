@@ -3,13 +3,14 @@ view: crazy_variant_unnest {
     sql:
 WITH unnest_lat as (
     SELECT
-        regexp_replace(src.path, '\\\\[[0-9]+\\\\]', '[]') as path
+        'src' as source
+      , regexp_replace(src.path, '\\\\[[0-9]+\\\\]', '[]') as path
       , typeof(src.value) as type
 FROM {% parameter table_schema_input %}.{% parameter table_name_input %},
   lateral flatten(src, recursive=>true) src
 
-GROUP BY 1,2
-ORDER BY 1,2
+GROUP BY 1,2,3
+ORDER BY 1,2,3
 )
 SELECT *
 , REGEXP_COUNT(path, '\\[') as count_brackets
@@ -21,6 +22,7 @@ FROM unnest_lat
   }
 
   dimension: path {}
+  dimension: source {}
   dimension: count_brackets {}
   dimension: count_periods {}
   dimension: type_convert {

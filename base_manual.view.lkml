@@ -2,14 +2,14 @@ explore: base {
   join: customer_array {
     sql: , LATERAL FLATTEN(${base.src}:customer) ${customer_array.SQL_TABLE_NAME} ;;
   }
-  join: customer_object {}
+  join: customer_array_object {}
   join: salesperson_object {}
   join: vehicle_array {
     sql: , LATERAL FLATTEN(${base.src}:vehicle) ${vehicle_array.SQL_TABLE_NAME} ;;
   }
-  join: vehicle_object {}
-  join: vehicle_object_extras_array {
-    sql: , LATERAL FLATTEN(${vehicle_array.vehicle}:extras) ${vehicle_object_extras_array.SQL_TABLE_NAME} ;;
+  join: vehicle_array_object {}
+  join: vehicle_array_object_extras_array {
+    sql: , LATERAL FLATTEN(${vehicle_array.vehicle}:extras) ${vehicle_array_object_extras_array.SQL_TABLE_NAME} ;;
   }
 }
 
@@ -48,7 +48,7 @@ view: customer_array {
   }
 }
 
-view: customer_object {
+view: customer_array_object {
   dimension: address {
     sql: ${customer_array.customer}:address::VARCHAR ;;
   }
@@ -68,7 +68,7 @@ view: vehicle_array {
   }
 }
 
-view: vehicle_object {
+view: vehicle_array_object {
   dimension: make {
     sql: ${vehicle_array.vehicle}:make::VARCHAR  ;;
   }
@@ -83,7 +83,7 @@ view: vehicle_object {
   }
 }
 
-view: vehicle_object_extras_array {
+view: vehicle_array_object_extras_array {
   # array with no object
   dimension: extras {
     sql: ${TABLE}.value::VARCHAR ;;
