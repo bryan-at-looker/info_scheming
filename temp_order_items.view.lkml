@@ -110,6 +110,12 @@ dimension_group: shipped_at {
 }
 
     
+dimension: spencer {
+    type: string
+    sql: ${TABLE}.SPENCER ;;
+}
+
+    
 dimension: status {
     type: string
     sql: ${TABLE}.STATUS ;;
