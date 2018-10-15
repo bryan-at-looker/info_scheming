@@ -2,14 +2,36 @@ view: order_items {
 sql_table_name: PUBLIC.ORDER_ITEMS ;;
 
 dimension_group: created_at {
-    timeframes: [raw, year, quarter, month, week, date, day_of_week, hour, hour_of_day, minute, time, time_of_day]
+    timeframes: [raw
+    ,year
+    ,quarter
+    ,month
+    ,week
+    ,date
+    ,day_of_week
+    ,hour
+    ,hour_of_day
+    ,minute
+    ,time
+    ,time_of_day]
     type: time
     sql: ${TABLE}.CREATED_AT ;;
 }
 
     
 dimension_group: delivered_at {
-    timeframes: [raw, year, quarter, month, week, date, day_of_week, hour, hour_of_day, minute, time, time_of_day]
+    timeframes: [raw
+    ,year
+    ,quarter
+    ,month
+    ,week
+    ,date
+    ,day_of_week
+    ,hour
+    ,hour_of_day
+    ,minute
+    ,time
+    ,time_of_day]
     type: time
     sql: ${TABLE}.DELIVERED_AT ;;
 }
@@ -34,7 +56,18 @@ dimension: order_id {
 
     
 dimension_group: returned_at {
-    timeframes: [raw, year, quarter, month, week, date, day_of_week, hour, hour_of_day, minute, time, time_of_day]
+    timeframes: [raw
+    ,year
+    ,quarter
+    ,month
+    ,week
+    ,date
+    ,day_of_week
+    ,hour
+    ,hour_of_day
+    ,minute
+    ,time
+    ,time_of_day]
     type: time
     sql: ${TABLE}.RETURNED_AT ;;
 }
@@ -47,7 +80,18 @@ dimension: sale_price {
 
     
 dimension_group: shipped_at {
-    timeframes: [raw, year, quarter, month, week, date, day_of_week, hour, hour_of_day, minute, time, time_of_day]
+    timeframes: [raw
+    ,year
+    ,quarter
+    ,month
+    ,week
+    ,date
+    ,day_of_week
+    ,hour
+    ,hour_of_day
+    ,minute
+    ,time
+    ,time_of_day]
     type: time
     sql: ${TABLE}.SHIPPED_AT ;;
 }
