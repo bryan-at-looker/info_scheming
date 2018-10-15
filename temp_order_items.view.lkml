@@ -51,7 +51,7 @@ dimension: inventory_item_id {
     
 dimension: new_sale_price {
     type: number
-    description: "new comment2 for you to check out"
+    description: "new comment22 for you to check out"
     sql: ${TABLE}.NEW_SALE_PRICE ;;
 }
 
