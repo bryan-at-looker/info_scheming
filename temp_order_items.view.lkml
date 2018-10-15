@@ -112,6 +112,7 @@ dimension_group: shipped_at {
     
 dimension: spencer {
     type: string
+    description: "Spencer is the coolest"
     sql: ${TABLE}.SPENCER ;;
 }
 
