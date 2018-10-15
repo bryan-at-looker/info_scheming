@@ -26,3 +26,6 @@ explore: crazy_variant_unnest {
     filters: { field: view_name_output value: ""}
   }
 }
+
+
+explore: temp_order_items_extended {}
