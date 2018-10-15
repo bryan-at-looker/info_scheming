@@ -1,6 +1,12 @@
 view: temp_order_items {
 sql_table_name: LOOKER_SCRATCH.TEMP_ORDER_ITEMS ;;
 
+dimension: clayton {
+    type: number
+    sql: ${TABLE}.CLAYTON ;;
+}
+
+    
 dimension_group: created_at {
     timeframes: [raw
     ,year
