@@ -61,6 +61,12 @@ dimension: inventory_item_id {
 }
 
     
+dimension: maxie {
+    type: string
+    sql: ${TABLE}.MAXIE ;;
+}
+
+    
 dimension: new_sale_price {
     type: number
     description: "new comment22 for you to check out"
