@@ -43,6 +43,12 @@ dimension_group: delivered_at {
 }
 
     
+dimension: hugo {
+    type: string
+    sql: ${TABLE}.HUGO ;;
+}
+
+    
 dimension: id {
     type: number
     sql: ${TABLE}.ID ;;
