@@ -122,6 +122,12 @@ dimension_group: shipped_at {
 }
 
     
+dimension: sierra {
+    type: string
+    sql: ${TABLE}.SIERRA ;;
+}
+
+    
 dimension: spencer {
     type: string
     description: "Spencer is the coolest"
