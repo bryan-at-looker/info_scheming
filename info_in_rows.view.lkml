@@ -7,10 +7,6 @@ view: info_in_rows {
  ;;
   }
 
-  parameter: project_id {
-    type: unquoted
-  }
-
   parameter: table_schema_input {
     type: unquoted
   }
@@ -28,9 +24,13 @@ view: info_in_rows {
     sql: '{% parameter view_name_output %}' ;;
   }
 
+  parameter: project_id_output {
+    type: unquoted
+  }
+
   dimension: project_id_lookml {
     type: string
-    sql: '{% parameter view_name_output %}' ;;
+    sql: '{% parameter project_id_output %}' ;;
   }
 
   dimension: table_schema {
