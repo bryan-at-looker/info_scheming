@@ -15,7 +15,6 @@ explore: info_in_rows {
   always_filter: {
     filters: { field: table_name_input value: ""}
     filters: { field: table_schema_input value: ""}
-    filters: { field: view_name_output value: ""}
   }
 }
 

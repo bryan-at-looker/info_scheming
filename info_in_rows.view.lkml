@@ -15,24 +15,6 @@ view: info_in_rows {
     type: unquoted
   }
 
-  parameter: view_name_output {
-    type: unquoted
-  }
-
-  dimension: view_name_lookml {
-    type: string
-    sql: '{% parameter view_name_output %}' ;;
-  }
-
-  parameter: project_id_output {
-    type: unquoted
-  }
-
-  dimension: project_id_lookml {
-    type: string
-    sql: '{% parameter project_id_output %}' ;;
-  }
-
   dimension: table_schema {
     type: string
     sql: ${TABLE}."TABLE_SCHEMA" ;;
