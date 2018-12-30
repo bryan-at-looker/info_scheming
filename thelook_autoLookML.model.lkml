@@ -1,7 +1,7 @@
 connection: "snowlooker"
 
-include: "*.view.lkml"                       # include all views in this project
-# include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
+include: "order_items.view.lkml"
+include: "users.view.lkml"
 
 explore: order_items {
   join: users {
@@ -10,3 +10,6 @@ explore: order_items {
     sql_on: ${order_items.user_id} = ${users.id} ;;
   }
 }
+
+# if you want to add a new column to users (the table being polled by the webhook, syntax is below)
+# ALTER TABLE LOOKER_SCRATCH.USERS_TEMP ADD COLUMN bryan_new_column NUMBER COMMENT 'this is bryans new column'
