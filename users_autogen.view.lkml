@@ -1,9 +1,16 @@
 view: users_autogen {
-sql_table_name: PUBLIC.USERS ;;
+sql_table_name: LOOKER_SCRATCH.USERS_TEMP ;;
 
 dimension: age {
   sql: ${TABLE}.AGE ;;
   type: number
+}
+
+  
+dimension: bryan_new_column {
+  sql: ${TABLE}.BRYAN_NEW_COLUMN ;;
+  type: number
+  description: "this is bryans new column"
 }
 
   
