@@ -45,21 +45,6 @@ dimension: first_name {
 }
 
   
-dimension_group: first_purchase_at {
-  timeframes: [raw
-  ,year
-  ,quarter
-  ,month
-  ,week
-  ,date
-  ,day_of_week
-  ,month_name]
-  type: time
-  sql: ${TABLE}.FIRST_PURCHASE_AT ;;
-  description: "this is bryans new column"
-}
-
-  
 dimension: gender {
   sql: ${TABLE}.GENDER ;;
   type: string
