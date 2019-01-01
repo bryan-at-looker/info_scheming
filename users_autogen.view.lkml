@@ -57,13 +57,6 @@ dimension: id {
 }
 
   
-dimension: jess_new_column {
-  sql: ${TABLE}.JESS_NEW_COLUMN ;;
-  type: number
-  description: "this is Jess new column"
-}
-
-  
 dimension: last_name {
   sql: ${TABLE}.LAST_NAME ;;
   type: string
