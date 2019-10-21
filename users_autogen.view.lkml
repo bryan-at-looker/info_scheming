@@ -7,23 +7,9 @@ dimension: age {
 }
 
   
-dimension: bryan_new_column {
-  sql: ${TABLE}.BRYAN_NEW_COLUMN ;;
-  type: number
-  description: "this is bryans new column"
-}
-
-  
 dimension: city {
   sql: ${TABLE}.CITY ;;
   type: string
-}
-
-  
-dimension: cool_bryan {
-  sql: ${TABLE}.COOL_BRYAN ;;
-  type: number
-  description: "this is bryan's new column"
 }
 
   
