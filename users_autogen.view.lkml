@@ -1,5 +1,5 @@
 view: users_autogen {
-sql_table_name: PUBLIC.USERS ;;
+sql_table_name: LOOKER_SCRATCH.USERS_TEMP ;;
 
 dimension: age {
   sql: ${TABLE}.AGE ;;
@@ -7,9 +7,23 @@ dimension: age {
 }
 
   
+dimension: bryan_new_column {
+  sql: ${TABLE}.BRYAN_NEW_COLUMN ;;
+  type: number
+  description: "this is bryans new column"
+}
+
+  
 dimension: city {
   sql: ${TABLE}.CITY ;;
   type: string
+}
+
+  
+dimension: cool_bryan {
+  sql: ${TABLE}.COOL_BRYAN ;;
+  type: number
+  description: "this is bryan's new column"
 }
 
   
@@ -42,6 +56,21 @@ dimension: email {
 dimension: first_name {
   sql: ${TABLE}.FIRST_NAME ;;
   type: string
+}
+
+  
+dimension_group: first_purchase_at {
+  timeframes: [raw
+  ,year
+  ,quarter
+  ,month
+  ,week
+  ,date
+  ,day_of_week
+  ,month_name]
+  type: time
+  sql: ${TABLE}.FIRST_PURCHASE_AT ;;
+  description: "the customers first purchase"
 }
 
   
