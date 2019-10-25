@@ -40,6 +40,13 @@ dimension_group: created_at {
 }
 
   
+dimension: custom_field_1 {
+  sql: ${TABLE}.CUSTOM_FIELD_1 ;;
+  type: number
+  description: "this is Jess's new column"
+}
+
+  
 dimension: email {
   sql: ${TABLE}.EMAIL ;;
   type: string
