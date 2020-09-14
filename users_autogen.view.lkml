@@ -104,12 +104,6 @@ dimension: longitude {
 }
 
   
-dimension: rob_test {
-  sql: ${TABLE}.ROB_TEST ;;
-  type: string
-}
-
-  
 dimension: state {
   sql: ${TABLE}.STATE ;;
   type: string
