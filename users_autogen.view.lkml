@@ -86,6 +86,20 @@ dimension: id {
 }
 
   
+dimension: jess_new_test {
+  sql: ${TABLE}.JESS_NEW_TEST ;;
+  type: string
+  description: "This is a description"
+}
+
+  
+dimension: jess_test {
+  sql: ${TABLE}.JESS_TEST ;;
+  type: string
+  description: "This is a description"
+}
+
+  
 dimension: last_name {
   sql: ${TABLE}.LAST_NAME ;;
   type: string
