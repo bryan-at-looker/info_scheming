@@ -7,6 +7,12 @@ dimension: age {
 }
 
   
+dimension: anna_test_1 {
+  sql: ${TABLE}.ANNA_TEST_1 ;;
+  type: string
+}
+
+  
 dimension: bryan_new_column {
   sql: ${TABLE}.BRYAN_NEW_COLUMN ;;
   type: number
@@ -44,6 +50,12 @@ dimension: custom_field_1 {
   sql: ${TABLE}.CUSTOM_FIELD_1 ;;
   type: number
   description: "this is Jess's new column"
+}
+
+  
+dimension: des_test {
+  sql: ${TABLE}.DES_TEST ;;
+  type: string
 }
 
   
@@ -115,6 +127,18 @@ dimension: latitude {
 dimension: longitude {
   sql: ${TABLE}.LONGITUDE ;;
   type: number
+}
+
+  
+dimension: olivia_test_1 {
+  sql: ${TABLE}.OLIVIA_TEST_1 ;;
+  type: string
+}
+
+  
+dimension: rob_test {
+  sql: ${TABLE}.ROB_TEST ;;
+  type: string
 }
 
   
