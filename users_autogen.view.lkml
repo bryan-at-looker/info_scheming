@@ -142,6 +142,12 @@ dimension: rob_test {
 }
 
   
+dimension: rob_test8 {
+  sql: ${TABLE}.ROB_TEST8 ;;
+  type: string
+}
+
+  
 dimension: state {
   sql: ${TABLE}.STATE ;;
   type: string
